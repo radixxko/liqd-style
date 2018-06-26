@@ -1,0 +1,30 @@
+:name
+	/[a-zA-Z][a-zA-Z_\-]*/
+
+:value
+	/[^;]*[^\s;]/
+
+:selector
+	/[^${};]+/
+
+:variable_definition
+	$ $:name : $:value ;
+
+:generator_definition
+	@ $:name { ?...$styles:style }
+
+:generator
+	@ $:name ;
+
+:rule
+	$:selector { ?...$styles:style }
+
+:style
+	$:variable_definition
+	$:generator_definition
+	$:generator
+	$property:name : $:value ;
+	$:rule
+
+:main
+	...$styles:style
