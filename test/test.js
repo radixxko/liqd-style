@@ -9,10 +9,12 @@ $font: 'Tahoma', 'Helvetica' ;
 $font3: $font2;
 $font2: $font;
 $color: red;
+$width: 8px;
 @border-radius{ border-radius: 5px; }
 @box{ top:0; left:0; right:0; bottom:0; color: $color; }
 html, body
 {
+	-webkit-border-radius: 5px;
 	margin: 0;
 	$color: rgba(255,0,0,0.2);
 
@@ -25,7 +27,7 @@ html, body
 		padding: 7px;
 		@border-radius; // jozo je tu
 		padding: 0px;
-		padding: 5px;
+		padding: $width $width $width $width;
 		@box;
 
 		&:hover
@@ -49,7 +51,7 @@ let start = process.hrtime(), i, compiled;
 
 for( i = 0; i < 1000; ++i )
 {
-	compiled = Style.compile( style );
+	compiled = Style.compile( style, { minify: true });
 }
 let end = process.hrtime(start);
 
