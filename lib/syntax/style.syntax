@@ -15,7 +15,7 @@
 	/([^;{}]+?)\s*(?=;)/1
 
 :selector
-	/([^${};@]+?)\s*(?=\{)/1
+	/([^${};@\/][^${};@]*?)\s*(?=\{)/1
 
 :variable_definition
 	$name:variable_name : $:value ;
@@ -28,6 +28,7 @@
 	$:selector { ?...$definitions:definition }
 	$generator:generator_name ;
 	$:variable_definition
+	$keyword:/(@(font\-face|keyframes|media)[^{]*?)\s*(?=\{)/1 { ?...$definitions:definition }
 	$:generator_definition
 	$:comment
 

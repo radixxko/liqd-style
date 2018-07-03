@@ -5,6 +5,20 @@ const Style = require('../lib/style');
 const style =
 `
 /* janko hrasko */
+a
+{
+	color: red;
+	@media phone
+	{
+		color: blue;
+	}
+}
+@keyframes jozo
+{
+	0% { left: 0; }
+	100% { left: 100px; }
+}
+@media super{
 $font: 'Tahoma', 'Helvetica' ;
 $font3: $font2;
 $font2: $font;
@@ -42,7 +56,7 @@ html, body
 
 		body.noscroll &{ color:silver; }
 	}
-}
+}}
 `;
 
 Style.init();
