@@ -4,7 +4,7 @@ const Style = require('../lib/style');
 
 const style =
 `
-/* janko hrasko */
+/*janko hrasko
 a
 {
 	color: red;
@@ -12,11 +12,23 @@ a
 	{
 		color: blue;
 	}
-}
+}*/
 @keyframes jozo
 {
 	0% { left: 0; }
 	100% { left: 100px; }
+}
+@font-face
+{
+    font-family: 'SanFranciscoWeb';
+    font-weight: 100;
+    font-style: normal;
+    src: url('/static/fonts/myriadpro/MyriadPro-Light.otf');
+    src: url('/static/fonts/myriadpro/MyriadPro-Light.otf') format('opentype');
+    src: url('/static/fonts/myriadpro/MyriadPro-Light.eot');
+    src: url('/static/fonts/myriadpro/MyriadPro-Light.eot?#iefix') format('embedded-opentype'),
+    url('/static/fonts/myriadpro/MyriadPro-Light.woff') format('woff'),
+    url('/static/fonts/myriadpro/MyriadPro-Light.ttf')  format('truetype');
 }
 @media super{
 $font: 'Tahoma', 'Helvetica' ;
@@ -65,7 +77,7 @@ let start = process.hrtime(), i, compiled;
 
 for( i = 0; i < 1000; ++i )
 {
-	compiled = Style.compile( style, { minify: true });
+	compiled = Style.compile( style );
 }
 let end = process.hrtime(start);
 
