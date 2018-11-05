@@ -13,6 +13,7 @@ a
 		color: blue;
 	}
 }*/
+//-webkit-overflow-scrolling: touch;
 @keyframes jozo
 {
 	0% { left: 0; }
@@ -60,13 +61,19 @@ html, body
 		{
 			color: red;
 
+			content: "\\f056";
+
 			.active
 			{
 				color: blue;
+
+				content: '\\f056';
 			}
 		}
 
 		body.noscroll &{ color:silver; }
+
+		li:not(:first-child):before{ color: red; }
 	}
 }}
 `;
