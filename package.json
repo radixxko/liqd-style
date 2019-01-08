@@ -1,7 +1,7 @@
 {
   "name": "liqd-style",
-  "description": "CSS Extension Library",
-  "version": "1.1.5",
+  "description": "CSS Preprocessor Library",
+  "version": "1.2.0",
   "author": "radixxko",
   "license": "MIT",
   "main": "lib/style.js",

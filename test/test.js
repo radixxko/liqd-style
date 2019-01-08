@@ -14,6 +14,7 @@ a
 	}
 }*/
 //-webkit-overflow-scrolling: touch;
+-webkit-overflow-scrolling: touch;
 @keyframes jozo
 {
 	0% { left: 0; }
@@ -82,7 +83,7 @@ Style.init();
 
 let start = process.hrtime(), i, compiled;
 
-for( i = 0; i < 1000; ++i )
+for( i = 0; i < 1; ++i )
 {
 	compiled = Style.compile( style );
 }
